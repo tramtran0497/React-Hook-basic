@@ -4,7 +4,7 @@ The project is to undestanding depply React-Hook and learning new thing SASS/SCS
 ## How to use SASS/SCSS in project?
 - Extention file: ".scss" instead of ".css" like normally using.
 
-- Using great tool "SCSS formatter" to suggest/support format scss during coding.
+- Using great tool "SCSS formatter" to support format scss during coding.
 
 - Remember SCSS/SASS can not use directly, you must install 
 ` npm install node-sass` 
