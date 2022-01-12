@@ -23,11 +23,12 @@ this library helps to compile from scss/sass to css file.
 
 ---------------------------------------------------------
 ## useState() small project
-### what is the project and the features? 
+### what is the first project and the features? 
 - There is a color square, then I click the square, it changes another color (simple project)
 
 - Every time rendering, reload page, the color square shows the color which is changed before NOT the initial color (DO NOT use `useEffect()` at this time, because I want to practice only `useState()` and `localStorge`, `callback initialState`).
 
 For example: the initial color is `green`, then I click square and it changes to `red` color. After reloading page, the color of square is `red`.
 
-
+### what is the second project and the features? 
+- There is a To-Do-List project, after the first rendering, it shows a list works in day that is given array. Whenever users click each work, it will be dissappeared and return new list.
