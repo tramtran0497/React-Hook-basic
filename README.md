@@ -32,3 +32,7 @@ For example: the initial color is `green`, then I click square and it changes to
 
 ### what is the second project and the features? 
 - There is a To-Do-List project, after the first rendering, it shows a list works in day that is given array. Whenever users click each work, it will be dissappeared and return new list.
+
+There are 2 ways that I wrote code for this project:
+- The first time: App.js file roles both position: control database and rendering UI and the bad idea leads to complex for using components.
+- The second time(refactoring code): App.js is database control and ToDOList.jsx roles rendering UI.

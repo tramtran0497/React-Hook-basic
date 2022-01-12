@@ -4,7 +4,7 @@ import './App.scss';
 import ToDoList from './Components/toDoList/ToDoList';
 
 function App() {
-  const [toDoList, setToDoList] = useState([
+  const toDoList = [
     {
       id: 1,
       title: "Go Shopping"
@@ -21,23 +21,17 @@ function App() {
       id: 4,
       title: "Watching movies"
     },
-  ])
-  function handleClick(item){
-    const cloneList = [...toDoList]
-    const newList = cloneList.filter(each => each.id !== item.id)
-    setToDoList(newList)
+  ]
+  const [todolist, setTodolist] = useState(toDoList)
+  
+  function handleToDoList(item){
+    //console.log("inonclick",item) // a given element of an array
+    const newListToDo = [...todolist].filter(action => action.id !== item.id)
+    setTodolist(newListToDo)
   }
   return ( 
     <div>
-      <h1>To Do Application</h1>
-      <ul>
-        {toDoList.map((item, index) => {
-              //console.log(item.id)
-              return (
-             <ToDoList key={item.id} item={item} onClick = {()=> handleClick(item)}/>)
-            })
-        }
-      </ul>
+      <ToDoList todolist={todolist} onToDoClick={handleToDoList}/>
     </div>
      
     
