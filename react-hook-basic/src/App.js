@@ -1,9 +1,10 @@
 import './App.scss';
+import ColorSquare from './Components/ColorSquare/colorSquare';
 
 function App() {
   return ( 
-    <div className = "app">
-    Hello
+    <div>
+      <ColorSquare/>
     </div>
      
     

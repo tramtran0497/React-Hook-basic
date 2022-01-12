@@ -1,0 +1,17 @@
+
+$box-size: 200px; 
+.color-page{
+    h1{color: black;
+    }
+    p{
+        font-size: 20px;
+        background-color: black;
+        width: $box-size;
+    }
+    .color-square{
+        height: $box-size;
+        width: $box-size;
+        transition: all .35s ease-in-out;
+        cursor: pointer;
+    }
+}
