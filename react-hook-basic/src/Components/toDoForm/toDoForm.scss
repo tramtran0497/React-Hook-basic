@@ -1,0 +1,14 @@
+$size-form: 200px;
+.to-do-form {
+    width: $size-form;
+    height: $size-form;
+    display: flex;
+    align-items: center;
+    button{
+        background-color: green;
+        color: white;
+        border: none;
+        margin-left: 10px;
+        padding: 3px 5px;
+    }
+}

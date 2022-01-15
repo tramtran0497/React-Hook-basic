@@ -31,8 +31,13 @@ this library helps to compile from scss/sass to css file.
 For example: the initial color is `green`, then I click square and it changes to `red` color. After reloading page, the color of square is `red`.
 
 ### what is the second project and the features? 
+#### To do List
 - There is a To-Do-List project, after the first rendering, it shows a list works in day that is given array. Whenever users click each work, it will be dissappeared and return new list.
 
 There are 2 ways that I wrote code for this project:
 - The first time: App.js file roles both position: control database and rendering UI and the bad idea leads to complex for using components.
-- The second time(refactoring code): App.js is database control and ToDOList.jsx roles rendering UI.
+- The second time(refactoring code): App.js is database control and ToDoList.jsx roles rendering UI.
+
+#### To do form
+- Creating a form, that users can add works and submit them. Then, all new data will be add the current array and rendering new list.
+
