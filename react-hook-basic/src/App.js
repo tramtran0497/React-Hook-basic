@@ -1,5 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.scss';
+import queryString from 'query-string'
+import FetchData from './Components/fetchData/FetchData';
+import Pagination from './Components/pagination/Pagination';
 import ToDoForm from './Components/toDoForm/ToDoForm';
 //import ColorSquare from './Components/ColorSquare/colorSquare';
 import ToDoList from './Components/toDoList/ToDoList';
@@ -44,13 +47,77 @@ function App() {
     newList.push(newToDo)
     setTodolist(newList)
   }
+
+  const [postList, setPostList] = useState([])
+  // fetching data once as first
+  // useEffect(() => {
+  //   async function fetchData(){
+  //     //const url = "http://js-post-api.herokuapp.com/api/posts?_limit=10&_page=1"
+  //     try{
+  //       const resUrl = await fetch("http://js-post-api.herokuapp.com/api/posts?_limit=10&_page=1")
+  //       const resJson = await resUrl.json()
+  //       //console.log(data["data"])
+  //       //const data = resJson["data"]
+  //       const {data} = resJson
+  //       setPostList(data)
+  //     }
+  //     catch(error){
+  //       console.log(error)
+  //     }
+  //   }  
+  //   // Remember to call fetchData()
+  //   fetchData()
+  // },[])
+
+  
+  const [pagination, setPagination] = useState({
+    _page: 1,
+    _limit: 10,
+    _totalRows: 50,
+  })
+ 
+  const [filters, setFilters] = useState({
+    _page: 1,
+    _limit: 10,
+  })
+ 
+  useEffect(() => {
+    async function fetchData(){
+      try{
+        const paramString = queryString.stringify(filters)
+        console.log("param", paramString, filters)
+        const resUrl = await fetch(`http://js-post-api.herokuapp.com/api/posts?${paramString}`)
+        const resJson = await resUrl.json()
+        //console.log(data["data"])
+        //const data = resJson["data"]
+        const {data, pagination} = resJson
+        //console.log("Update data", pagination, data)
+        setPostList(data)
+        setPagination(pagination)
+      }
+      catch(error){
+        console.log(error)
+      }
+    }  
+    fetchData()
+  },[filters])
+
+  function handleSelectedPage(newPage){
+    //console.log("app", newPage)
+    setFilters({
+      ...filters,
+      _page: newPage,
+    })
+  }
+  //console.log(pagination, filters)
   return ( 
     <div>
-      <ToDoForm onSubmit={handleToDoForm}/>
-      <ToDoList todolist={todolist} onToDoClick={handleToDoList}/>
+      <Pagination onSelectChange={handleSelectedPage} data={postList} pagination={pagination}/>
+      {/*<FetchData data={postList}/>
+        <ToDoForm onSubmit={handleToDoForm}/>
+        <ToDoList todolist={todolist} onToDoClick={handleToDoList}/>
+    */}
     </div>
-     
-    
   );
 }
 

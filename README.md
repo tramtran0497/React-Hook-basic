@@ -22,7 +22,7 @@ this library helps to compile from scss/sass to css file.
 - Run and test to check before code the main part.
 
 ---------------------------------------------------------
-## useState() small project
+## useState() small projects
 ### what is the first project and the features? 
 - There is a color square, then I click the square, it changes another color (simple project)
 
@@ -40,4 +40,16 @@ There are 2 ways that I wrote code for this project:
 
 #### To do form
 - Creating a form, that users can add works and submit them. Then, all new data will be add the current array and rendering new list.
+---------------------------------------------------------
+## useEffect() small projects
+#### Fetch data from URL: [API](http://js-post-api.herokuapp.com/api/posts?_limit=10&_page=1)
+- Fetch data is a side-effect, then we pratice to use useEffect().
+
+- Parent components send data through props to children components, then children show data.
+
+### Fetch data based on selection of users
+- As first rendering, it shows titles of data in page 1 and there are 2 buttons: `Previous` and `Next`, users can select to next page or previous page and it shows data following the selected page.
+
+- Parent components also send data through props to children components, then children show data as the first rendering. After selection of users, children components send back callback function with `newPage` params, this informs to parent that which page is needed fetch data and parent send new data to children.
+
 
