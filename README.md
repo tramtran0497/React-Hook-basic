@@ -47,7 +47,7 @@ There are 2 ways that I wrote code for this project:
 
 - Parent components send data through props to children components, then children show data.
 
-### Fetch data based on selection of users
+#### Fetch data based on selection of users
 - As first rendering, it shows titles of data in page 1 and there are 2 buttons: `Previous` and `Next`, users can select to next page or previous page and it shows data following the selected page.
 
 - Parent components also send data through props to children components, then children show data as the first rendering. After selection of users, children components send back callback function with `newPage` params, this informs to parent that which page is needed fetch data and parent send new data to children.
