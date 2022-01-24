@@ -7,7 +7,7 @@ function SearchFunctionality({onSubmit}) {
         if(!onSubmit) return
         setTextSearch(e.target.value)
         onSubmit(textSerch)
-console.log("Hello")
+
     }
   return (
     <div>
