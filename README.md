@@ -25,7 +25,6 @@ this library helps to compile from scss/sass to css file.
 ## useState() small projects
 ### what is the first project and the features? 
 - There is a color square, then I click the square, it changes another color (simple project)
-
 - Every time rendering, reload page, the color square shows the color which is changed before NOT the initial color (DO NOT use `useEffect()` at this time, because I want to practice only `useState()` and `localStorge`, `callback initialState`).
 
 For example: the initial color is `green`, then I click square and it changes to `red` color. After reloading page, the color of square is `red`.
@@ -41,15 +40,19 @@ There are 2 ways that I wrote code for this project:
 #### To do form
 - Creating a form, that users can add works and submit them. Then, all new data will be add the current array and rendering new list.
 ---------------------------------------------------------
-## useEffect() small projects
-#### Fetch data from URL: [API](http://js-post-api.herokuapp.com/api/posts?_limit=10&_page=1)
+## useEffect() the small project
+#### Feature 1: Fetch data from URL and show on screen: [API](http://js-post-api.herokuapp.com/api/posts?_limit=10&_page=1)
 - Fetch data is a side-effect, then we pratice to use useEffect().
-
 - Parent components send data through props to children components, then children show data.
+- Fetch data page 1 and limit 10.
 
-#### Fetch data based on selection of users
+#### Feature 2: Fetch data based on selection of users, "Pagination"
 - As first rendering, it shows titles of data in page 1 and there are 2 buttons: `Previous` and `Next`, users can select to next page or previous page and it shows data following the selected page.
 
 - Parent components also send data through props to children components, then children show data as the first rendering. After selection of users, children components send back callback function with `newPage` params, this informs to parent that which page is needed fetch data and parent send new data to children.
+
+#### Feature 3: Search functionality with debounce.
+- Search tool is one of neccessary functionality on a web application, however, to prevent from rendering continously. 
+- Debounce helps to keep a tiny time about 300ms (we can change time as we want), then call a request and show the result for users.
 
 
